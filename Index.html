@@ -12,155 +12,75 @@ body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#eef3f9;color:#2
 .container{max-width:850px;margin:40px auto;padding:20px}
 .card{background:#fff;border-radius:14px;padding:30px;box-shadow:0 5px 20px #0001;margin-bottom:25px}
 .brand-header{text-align:center;background:linear-gradient(135deg,#0d3b66,#1d63b8);color:#fff;padding:25px 20px;border-radius:12px 12px 0 0;margin:-30px -30px 30px;box-shadow:0 4px 10px #0d3b6633}
-h1{margin:0 0 8px;font-size:26px;letter-spacing:.5px}
-.subtitle{color:#e2e8f0;font-size:14px;margin:0 0 12px 0}
 
-.header-row{display:flex;justify-content:space-between;align-items:flex-start;margin-top:15px;font-size:14px;color:#e2e8f0;flex-wrap:nowrap;gap:15px}
-.header-row > div{flex-shrink:0;text-align:center}
-
-/* Left Section: Clocks */
-.clock-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  text-align: left;
-}
-
-/* Analog Clock Styling - Matched to Calendar size (~112px) */
-.analog-clock {
-  width: 105px;
-  height: 105px;
-  background: #092a4a;
-  border: 3.5px solid #fff;
-  border-radius: 50%;
-  position: relative;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-}
-.clock-face {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-.hand {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform-origin: bottom;
-  background: #fff;
-  border-radius: 4px;
-}
-.hour-hand {
-  width: 5px;
-  height: 28px;
-  background: #ffcc00;
-  margin-left: -2.5px;
-}
-.min-hand {
-  width: 3.5px;
-  height: 38px;
-  background: #ffffff;
-  margin-left: -1.75px;
-}
-.sec-hand {
-  width: 1.5px;
-  height: 42px;
-  background: #ff3366;
-  margin-left: -0.75px;
-}
-.clock-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background: #ff3366;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
-.clock-number {
-  position: absolute;
-  font-size: 11px;
-  font-weight: bold;
-  color: #e2e8f0;
-  text-align: center;
-  width: 14px;
-  height: 14px;
-  line-height: 14px;
-}
-
-/* Center Section: Brand Name */
-.center-brand-section {
-  flex-grow: 1;
-  text-align: center;
-  padding-top: 25px;
-}
-
-/* Right Section: Mini Calendar */
-.calendar-widget {
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 6px 10px;
-  font-size: 11px;
-  text-align: center;
-  backdrop-filter: blur(4px);
-  min-width: 155px;
-}
-.cal-header {
-  font-weight: bold;
-  margin-bottom: 4px;
-  font-size: 12px;
-  letter-spacing: .5px;
-  color: #ffcc00;
-}
-.cal-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 2px;
-  text-align: center;
-}
-.cal-day-name {
-  font-weight: bold;
-  color: #cbd5e1;
-  font-size: 9px;
-  padding-bottom: 2px;
-}
-.cal-date {
-  padding: 2px;
-  border-radius: 3px;
-  color: #fff;
-}
-.cal-date.empty {
-  color: transparent;
-}
-.cal-date.highlight {
-  background: #ff3366;
-  color: #fff;
-  font-weight: bold;
-  box-shadow: 0 0 5px rgba(255, 51, 102, 0.8);
-}
-
-/* Modern Font & Elegant Name Styling */
-.brand-name {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ffffff, #ffccd5, #ff3366, #ffcc00, #ffe066);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 700;
-  font-size: 18px;
+/* Outer line / border added around the main heading box */
+.main-title-box {
   display: inline-block;
-  padding: 2px 8px;
-  background-color: rgba(13, 59, 102, 0.6);
-  border-radius: 6px;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-  white-space: nowrap;
+  padding: 8px 18px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 8px;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.main-title-box:hover {
+  border-color: #ffdf00;
+  transform: translateY(-2px);
+}
+
+h1{margin:0;font-size:26px;letter-spacing:.5px}
+.subtitle{color:#e2e8f0;font-size:14px;margin:0 0 12px 0}
+.header-row{
+display:grid;
+grid-template-columns:1fr auto 1fr;
+align-items:center;
+margin-top:10px;
+font-size:14px;
+color:#e2e8f0;
+gap:10px;
+white-space:nowrap;
+text-align:center;
+}
+.header-row > div{
+text-align:center;
+}
+.header-row > div:first-child{
+justify-self:start;
+}
+.header-row > div:nth-child(2){
+justify-self:center;
+}
+.header-row > div:last-child{
+justify-self:end;
+}
+
+/* Smaller Golden Name Styling with Pop-up Hover Effect */
+.brand-name{
+  font-family:'Poppins',sans-serif;
+  color:#ffdf00;
+  font-weight:700;
+  font-size:15px;
+  display:inline-block;
+  padding:4px 10px;
+  background-color:rgba(13,59,102,.7);
+  border:1px solid rgba(255,223,0,.35);
+  border-radius:6px;
+  box-shadow:0 3px 10px rgba(0,0,0,.2);
+  transition:transform .3s ease,color .3s ease,border-color .3s ease;
+  cursor:pointer;
+  white-space:nowrap;
+}
+.brand-name:hover{
+  transform:scale(1.12) translateY(-2px);
+  color:#fff;
+  border-color:#fff;
+  box-shadow:0 5px 14px rgba(255,255,255,.25);
 }
 .brand-name:hover {
-  transform: scale(1.05);
-  box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+  transform: scale(1.16) translateY(-2px);
+  color: #ffffff;
+  box-shadow: 0 8px 20px rgba(255, 223, 0, 0.5);
 }
 
 .input-section,.rates-inputs-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -172,6 +92,7 @@ input,select{width:100%;padding:13px;font-size:17px;border:1px solid #bbb;border
 input:focus,select:focus{border-color:#0d3b66;box-shadow:0 0 0 3px #0d3b661a}
 .hint{font-size:13px;color:#777;margin-top:5px}
 
+/* Calculate Button Click/Press Animation */
 button{width:100%;padding:14px;font-size:18px;font-weight:bold;border:0;border-radius:8px;cursor:pointer;background:linear-gradient(135deg,#0d3b66,#1d63b8);color:#fff;box-shadow:0 4px 10px #0d3b6633;transition:transform 0.1s ease, background 0.3s ease}
 button:hover{background:linear-gradient(135deg,#092a4a,#154e92);transform:translateY(-1px)}
 button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b6633}
@@ -199,16 +120,168 @@ button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b66
 .edit-rates-panel{display:none;margin-top:20px;padding:20px;background:#eef3f9;border-radius:8px;border:1px solid #cce0ff}
 .edit-rates-panel h3{margin-top:0;color:#0d3b66}
 .section-divider{margin:40px 0;border:0;height:2px;background:#cbd5e1}
-@media(max-width:768px){
+@media(max-width:600px){
 .container{margin:10px auto;padding:10px}.card{padding:20px}
 .brand-header{margin:-20px -20px 20px;padding:20px 15px}
 .input-section,.rates-inputs-grid{grid-template-columns:1fr}
 .full-width{grid-column:span 1}
 .bill-table,.slab-table{font-size:13px}
 .final-bill{flex-direction:column;gap:10px;text-align:center}
-.header-row{flex-direction:column;gap:15px;align-items:center}
-.center-brand-section{padding-top:0}
+.header-row{flex-direction:row;justify-content:space-between;white-space:nowrap}
 }
+
+.solar-section{display:none;grid-column:span 2;margin-top:5px;padding:20px;background:#f7fbff;border:1px solid #cce0ff;border-radius:10px}
+.solar-section h3{margin:0 0 15px;color:#0d3b66}
+.solar-note{font-size:13px;color:#555;margin-bottom:15px}
+.solar-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.solar-section .input-group{min-width:0}
+.solar-warning{display:none;background:#fff3cd;color:#856404;padding:12px;border-radius:8px;margin-top:10px;font-weight:bold}
+@media(max-width:600px){.solar-section{grid-column:span 1}.solar-grid{grid-template-columns:1fr}}
+
+/* Keep calculation areas stable - only inner text gets hover */
+.formula-box:hover {
+  transform: none;
+}
+
+
+/* Only main headings and highlighted calculation points hover */
+h1:hover,
+.main-title-box:hover,
+.formula-box strong:hover {
+  transform: scale(1.04);
+  text-shadow: none;
+}
+/*it5-t3ja5 - 7588717996*/
+h1,
+.main-title-box,
+.formula-box strong {
+  transition: transform .2s ease;
+}
+
+
+/* Only main headings and highlighted calculation points hover */
+h1:hover,
+.main-title-box:hover,
+.formula-box strong:hover {
+  transform: scale(1.04);
+  text-shadow: none;
+}
+/*it5-t3ja5 - 7588717996*/
+h1,
+.main-title-box,
+.formula-box strong {
+  transition: transform .2s ease;
+}
+
+
+/* Important update scrolling note */
+
+.update-note-wrapper{
+   width:100%;
+   display:flex;
+   align-items:center;
+   background:transparent;
+   border:2px solid #ffffff;
+   border-radius:12px;
+   padding:8px 8px;
+   overflow:hidden;
+   margin-top:12px;
+   box-sizing:border-box;
+}
+
+.notice-btn{
+   flex:none;
+   width:24px;
+   height:24px;
+   margin-right:6px;
+   border-radius:50%;
+   border:1px solid #d97706;
+   background:#ffcc00;
+   color:#000;
+   font-size:11px;
+   font-weight:bold;
+   cursor:pointer;
+   padding:0;
+   display:flex;
+   align-items:center;
+   justify-content:center;
+}
+
+.notice-btn:hover{
+   transform:scale(1.08);
+}
+
+.notice-scroll-area{
+   flex:1;
+   overflow:hidden;
+   white-space:nowrap;
+}
+
+.update-note{
+   display:inline-block;
+   white-space:nowrap;
+   color:#e2e8f0;
+   font-weight:700;
+   font-size:15px;
+   animation:moveNote 40s linear infinite;
+   cursor:pointer;
+   transition:color .35s ease;
+}
+
+.important-title{
+   color:#ffdf00;
+   transition:color .35s ease;
+}
+
+.update-note-wrapper:hover{
+   border-color:#ffdf00;
+}
+
+.update-note-wrapper:hover .update-note{
+   color:#ffffff;
+   animation-play-state:paused;
+}
+
+.update-note-wrapper:hover .important-title{
+   color:#fff200;
+}
+
+.update-note:hover{
+}
+
+@keyframes moveNote{
+  from{transform:translateX(30%);}
+  to{transform:translateX(-100%);}
+}
+  to{transform:translateX(-100%);}
+}
+
+
+/* Text Hover Effect Restored */
+label,
+.hint,
+.bill-table td,
+.bill-table th,
+.slab-table td,
+.slab-table th,
+.formula-box strong,
+.formula-box b,
+.update-note{
+   transition: transform 0.45s ease, color 0.45s ease;
+}
+
+label:hover,
+.hint:hover,
+.bill-table td:hover,
+.bill-table th:hover,
+.slab-table td:hover,
+.slab-table th:hover,
+.formula-box strong:hover,
+.formula-box b:hover{
+   transform:scale(1.04);
+   color:#0d63b8;
+}
+
 </style>
 </head>
 
@@ -217,39 +290,25 @@ button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b66
 
 <div class="card">
 <div class="brand-header">
+<div class="main-title-box">
 <h1>Electricity Bill Calculator</h1>
+</div>
 <div class="subtitle">Mahavitaran Bill Calculation & Detailed Step by Step Breakdown</div>
 <div class="header-row">
-<!-- Left side: Analog & Digital Clocks -->
-<div class="clock-section">
-<div class="analog-clock">
-<div class="clock-face" id="clockFace">
-<div class="hand hour-hand" id="hourHand"></div>
-<div class="hand min-hand" id="minHand"></div>
-<div class="hand sec-hand" id="secHand"></div>
-<div class="clock-center"></div>
+<div id="liveClock"></div>
+<div><span class="brand-name">Design & Built by : Tejas Kachare</span></div>
+<div id="currentDate"></div>
 </div>
-</div>
-<div id="liveClock" style="font-size: 13px; font-weight: bold; letter-spacing: 0.5px;"></div>
-</div>
-
-<!-- Center: Brand Name -->
-<div class="center-brand-section">
-<span class="brand-name">Made by : Tejas Kachare</span>
-</div>
-
-<!-- Right side: Mini Calendar -->
-<div>
-<div class="calendar-widget" id="calendarWidget"></div>
-</div>
+<div class="update-note-wrapper">
+<span class="update-note"><strong class="important-title">⚠️ IMPORTANT UPDATE :</strong> : Solar Residential & Commercial bill calculation is now available   [ 🔎 Important : Always verify FAC Charges & Sales Tax Rate...]</span>
 </div>
 </div>
 
 <div class="input-section">
 <div class="input-group">
-<label>Units Consumed( Yekun Wapar )</label>
+<label>Total Unit Consumption (Yekun Wapar)</label>
 <input type="number" id="units" min="0" step="0.01" placeholder="Enter units">
-<div class="hint">Example: 258, 313, 375, etc.</div>
+<div class="hint">Enter total units manually. Solar mode also keeps this field editable.</div>
 </div>
 
 <div class="input-group">
@@ -266,11 +325,61 @@ button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b66
 
 <div class="input-group">
 <label>Connection Type</label>
-<select id="connectionType">
+<select id="connectionType" onchange="handleConnectionTypeChange()">
 <option value="residential">Residential</option>
 <option value="commercial">Commercial</option>
+<option value="solar_residential">Solar Residential</option>
+<option value="solar_commercial">Solar Commercial</option>
 </select>
 <div class="hint">Select your connection category</div>
+</div>
+
+<div id="solarSection" class="solar-section full-width">
+<h3>☀️ Solar Net Meter Details</h3>
+<div class="solar-note">Enter the solar meter readings exactly as shown on the bill. Solar Residential uses Residential tariff/slabs/rates. Solar Commercial uses Commercial tariff/rates.</div>
+<div class="solar-grid">
+
+<div class="input-group">
+<label>Import Current Reading</label>
+<input type="number" id="solarImportCurrent" min="0" step="0.01" placeholder="e.g. 258">
+</div>
+
+<div class="input-group">
+<label>Import Previous Reading</label>
+<input type="number" id="solarImportPrevious" min="0" step="0.01" placeholder="e.g. 0">
+</div>
+
+<div class="input-group">
+<label>Export Current Reading</label>
+<input type="number" id="solarExportCurrent" min="0" step="0.01" placeholder="e.g. 7">
+</div>
+
+<div class="input-group">
+<label>Export Previous Reading</label>
+<input type="number" id="solarExportPrevious" min="0" step="0.01" placeholder="e.g. 0">
+</div>
+
+<div class="input-group">
+<label>Generation Current Reading</label>
+<input type="number" id="solarGenerationCurrent" min="0" step="0.01" placeholder="e.g. 216">
+</div>
+
+<div class="input-group">
+<label>Generation Previous Reading</label>
+<input type="number" id="solarGenerationPrevious" min="0" step="0.01" placeholder="e.g. 0">
+</div>
+
+<div class="input-group">
+<label>Previous Banked Units</label>
+<input type="number" id="solarPreviousBanked" min="0" step="0.01" value="0" placeholder="e.g. 0">
+</div>
+
+<div class="input-group">
+<label>Offset / Export Units Available for Credit</label>
+<input type="number" id="solarOffset" min="0" step="0.01" placeholder="Auto = Export Units">
+<div class="hint">Leave blank to use calculated export units as the offset.</div>
+</div>
+</div>
 </div>
 
 <div class="input-group">
@@ -299,6 +408,7 @@ button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b66
 <tr><td>Billing Period</td><td id="displayPeriod"></td></tr>
 <tr><td>Detected Bill Duration</td><td id="displayMonths"></td></tr>
 <tr><td>Approx. Billing Days</td><td id="displayDays"></td></tr>
+<tr id="solarDisplayRow" style="display:none"><td>Solar Meter Summary</td><td id="solarDisplaySummary"></td></tr>
 </table>
 
 <h3 id="chargesTitle"></h3>
@@ -359,85 +469,42 @@ button:active{transform:translateY(3px) scale(0.98);box-shadow:0 2px 5px #0d3b66
 </div>
 
 <script>
-// Dynamically generate numbers 1 to 12 inside the analog clock
-function initAnalogClockNumbers() {
-  const clockFace = document.getElementById('clockFace');
-  const radius = 37; // Adjusted radius for larger clock
-  const centerX = 52.5; // Half of clock width (105px / 2)
-  const centerY = 52.5;
+function handleConnectionTypeChange(){
+const type=document.getElementById("connectionType").value;
+const solar=document.getElementById("solarSection");
+const unitsInput=document.getElementById("units");
+const unitsGroup=unitsInput.closest(".input-group");
 
-  for (let i = 1; i <= 12; i++) {
-    const angle = (i * 30) * (Math.PI / 180);
-    const x = centerX + radius * Math.sin(angle) - 7;
-    const y = centerY - radius * Math.cos(angle) - 7;
-
-    const numElem = document.createElement('div');
-    numElem.className = 'clock-number';
-    numElem.innerText = i;
-    numElem.style.left = `${x}px`;
-    numElem.style.top = `${y}px`;
-    clockFace.appendChild(numElem);
-  }
+if(type==="solar_residential"||type==="solar_commercial"){
+solar.style.display="block";
+unitsInput.disabled=false;
+unitsInput.placeholder="Enter total solar billed / consumed units";
+if(unitsGroup) unitsGroup.style.opacity="1";
+}else{
+solar.style.display="none";
+unitsInput.disabled=false;
+unitsInput.placeholder="Enter units";
+if(unitsGroup) unitsGroup.style.opacity="1";
 }
-initAnalogClockNumbers();
-
-// Generate current month calendar with highlighted current date
-function renderCalendar() {
-  const now = new Date();
-  const year = now.getFullYear();
-  const month = now.getMonth();
-  const currentDate = now.getDate();
-
-  const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  
-  const firstDayIndex = new Date(year, month, 1).getDay();
-  const totalDays = new Date(year, month + 1, 0).getDate();
-
-  let html = `<div class="cal-header">${monthNames[month]} ${year}</div>`;
-  html += `<div class="cal-grid">`;
-  
-  const daysShort = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
-  daysShort.forEach(d => {
-    html += `<div class="cal-day-name">${d}</div>`;
-  });
-
-  // Blank slots for previous month offset
-  for (let i = 0; i < firstDayIndex; i++) {
-    html += `<div class="cal-date empty"></div>`;
-  }
-
-  // Days of current month
-  for (let day = 1; day <= totalDays; day++) {
-    const isToday = (day === currentDate) ? 'highlight' : '';
-    html += `<div class="cal-date ${isToday}">${day}</div>`;
-  }
-
-  html += `</div>`;
-  document.getElementById('calendarWidget').innerHTML = html;
 }
-renderCalendar();
+handleConnectionTypeChange();
 
 function updateHeaderInfo() {
-  const now = new Date();
-  let hours = now.getHours();
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-  const ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12;
-  const strHours = String(hours).padStart(2, '0');
-  
-  // Update Digital Clock text
-  document.getElementById('liveClock').innerText = `${strHours}:${minutes}:${seconds} ${ampm}`;
+const now = new Date();
+let hours = now.getHours();
+const minutes = String(now.getMinutes()).padStart(2, '0');
+const seconds = String(now.getSeconds()).padStart(2, '0');
+const ampm = hours >= 12 ? 'PM' : 'AM';
+hours = hours % 12;
+hours = hours ? hours : 12;
+const strHours = String(hours).padStart(2, '0');
+document.getElementById('liveClock').innerText = `${strHours}:${minutes}:${seconds} ${ampm}`;
 
-  // Update Analog Clock Hands
-  const secDeg = (now.getSeconds() / 60) * 360;
-  const minDeg = ((now.getMinutes() + now.getSeconds() / 60) / 60) * 360;
-  const hourDeg = (((hours % 12) + now.getMinutes() / 60) / 12) * 360;
-
-  document.getElementById('secHand').style.transform = `rotate(${secDeg}deg)`;
-  document.getElementById('minHand').style.transform = `rotate(${minDeg}deg)`;
-  document.getElementById('hourHand').style.transform = `rotate(${hourDeg}deg)`;
+const day = String(now.getDate()).padStart(2, '0');
+const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const monthName = monthNames[now.getMonth()];
+const year = now.getFullYear();
+document.getElementById('currentDate').innerText = `${day} / ${monthName} / ${year}`;
 }
 setInterval(updateHeaderInfo, 1000);
 updateHeaderInfo();
@@ -447,49 +514,339 @@ let globalCurrentInputs={};
 function formatMoney(n){return "₹"+n.toFixed(2)}
 
 function triggerMainCalculation(){
-const u=document.getElementById("units").value,p=document.getElementById("billingPeriod").value;
-const f=document.getElementById("fixedChargesInput").value,t=document.getElementById("connectionType").value;
+const p=document.getElementById("billingPeriod").value;
+const f=document.getElementById("fixedChargesInput").value;
+const t=document.getElementById("connectionType").value;
 const o=document.getElementById("otherAdjustmentInput").value;
 const ar=document.getElementById("arrearsInput").value;
 const e=document.getElementById("error");
 
-if(u===""||p===""||f===""){e.style.display="block";e.innerHTML="Please enter Units Consumed, Billing Period, and Fixed Charges.";return}
-const units=parseFloat(u),billingPeriod=parseFloat(p),fixedCharges=parseFloat(f),otherAdjustment=o===""?0:parseFloat(o),arrears=ar===""?0:parseFloat(ar);
+if(p===""||f===""){
+e.style.display="block";e.innerHTML="Please enter Billing Period and Fixed Charges.";return
+}
 
-if([units,billingPeriod,fixedCharges,otherAdjustment,arrears].some(isNaN)){e.style.display="block";e.innerHTML="Please enter valid numbers.";return}
-if(units<0||billingPeriod<=0||fixedCharges<0){e.style.display="block";e.innerHTML="Please check your input values.";return}
+const billingPeriod=parseFloat(p),fixedCharges=parseFloat(f);
+const otherAdjustment=o===""?0:parseFloat(o),arrears=ar===""?0:parseFloat(ar);
+
+if([billingPeriod,fixedCharges,otherAdjustment,arrears].some(isNaN)){
+e.style.display="block";e.innerHTML="Please enter valid numbers.";return
+}
+if(billingPeriod<=0||fixedCharges<0){
+e.style.display="block";e.innerHTML="Please check your input values.";return
+}
+
+let units=0;
+let solarInputs=null;
+
+if(t==="solar_residential"||t==="solar_commercial"){
+const getNum=id=>{
+const v=document.getElementById(id).value;
+return v===""?0:parseFloat(v);
+};
+solarInputs={
+importCurrent:getNum("solarImportCurrent"),
+importPrevious:getNum("solarImportPrevious"),
+exportCurrent:getNum("solarExportCurrent"),
+exportPrevious:getNum("solarExportPrevious"),
+generationCurrent:getNum("solarGenerationCurrent"),
+generationPrevious:getNum("solarGenerationPrevious"),
+previousBanked:getNum("solarPreviousBanked"),
+offsetInput:document.getElementById("solarOffset").value
+};
+if(Object.values(solarInputs).some(v=>typeof v==="number"&&isNaN(v))){
+e.style.display="block";e.innerHTML="Please enter valid Solar meter readings.";return
+}
+if(Object.values(solarInputs).some(v=>typeof v==="number"&&v<0)){
+e.style.display="block";e.innerHTML="Solar meter readings cannot be negative.";return
+}
+
+// IMPORTANT: Solar units remain manually editable. Meter readings are used
+// only for the solar-meter reference/breakdown; they do not overwrite Units Consumed.
+const u=document.getElementById("units").value;
+if(u===""){
+e.style.display="block";e.innerHTML="Please enter Total Unit Consumption along with Billing Period and Fixed Charges.";return
+}
+units=parseFloat(u);
+if(isNaN(units)){
+e.style.display="block";e.innerHTML="Please enter a valid Total Unit Consumption.";return
+}
+if(units<0){
+e.style.display="block";e.innerHTML="Please check your Total Unit Consumption.";return
+}
+}else{
+const u=document.getElementById("units").value;
+if(u===""){
+e.style.display="block";e.innerHTML="Please enter Units Consumed, Billing Period, and Fixed Charges.";return
+}
+units=parseFloat(u);
+if(isNaN(units)){
+e.style.display="block";e.innerHTML="Please enter valid numbers.";return
+}
+if(units<0){
+e.style.display="block";e.innerHTML="Please check your input values.";return
+}
+}
 
 e.style.display="none";
 document.getElementById("comparisonContainer").innerHTML="";
 document.getElementById("editRatesPanel").style.display="none";
 
-globalCurrentInputs={units,billingPeriod,fixedCharges,connectionType:t,otherAdjustment,arrears,customRates:null};
+globalCurrentInputs={units,billingPeriod,fixedCharges,connectionType:t,otherAdjustment,arrears,solarInputs,customRates:null};
 runCalculationAndDisplay(globalCurrentInputs,false);
 }
 
 function calculateBillData(inputs,override){
 const {units,billingPeriod,fixedCharges,connectionType,otherAdjustment,arrears}=inputs;
 
-const baseFixed=connectionType==="residential"?130:540;
+const tariffType=(connectionType==="solar_residential"||connectionType==="residential")
+?"residential":"commercial";
+const isSolar=(connectionType==="solar_residential"||connectionType==="solar_commercial");
+
+const baseFixed=tariffType==="residential"?130:540;
 const months=Math.max(1,Math.round(fixedCharges/baseFixed));
 
 const rates={
 wheelingRate:1.60,
-taxPercent:connectionType==="residential"?16:21,
+taxPercent:tariffType==="residential"?16:21,
 salesTaxRate:.30,
 slab1Rate:3.96,
 slab2Rate:10.80,
 slab3Rate:15.03,
 slab4Rate:17.53,
 commercialFlatRate:8.51,
-fuelRate1:.200,
-fuelRate2:.400,
-fuelRate3:.550,
-fuelRate4:.600,
+fuelRate1:.150,
+fuelRate2:.300,
+fuelRate3:.400,
+fuelRate4:.450,
 commercialFacRate:.400,
+solarEnergyRate:3.96,
+solarFacRate:.200,
+solarWheelingRate:1.60,
+solarDutyPercent:16,
 ...(override||{})
 };
 
+/* =========================================================
+   SOLAR BILLING
+   The solar meter calculation is kept exactly separate from
+   tariff calculation. Only the tariff family changes:
+   Solar Residential -> Residential tariff
+   Solar Commercial  -> Commercial tariff
+   ========================================================= */
+if(isSolar){
+const si=inputs.solarInputs||{
+importCurrent:0,importPrevious:0,
+exportCurrent:0,exportPrevious:0,
+generationCurrent:0,generationPrevious:0,
+previousBanked:0,offsetInput:""
+};
+
+const importUnits=Math.max(0,si.importCurrent-si.importPrevious);
+const exportUnits=Math.max(0,si.exportCurrent-si.exportPrevious);
+const generationUnits=Math.max(0,si.generationCurrent-si.generationPrevious);
+const offsetUnits=si.offsetInput===""?exportUnits:Math.max(0,parseFloat(si.offsetInput)||0);
+const previousBanked=Math.max(0,si.previousBanked);
+
+/* Existing solar net-meter reference calculation */
+const availableCredit=offsetUnits+previousBanked;
+const meterCalculatedBilledUnits=Math.max(0,importUnits-availableCredit);
+const billedUnits=units;
+const currentBanked=Math.max(0,availableCredit-importUnits);
+
+/* ---------- ELECTRICITY CHARGES ---------- */
+let electricityCharges=0;
+let slabHTML="";
+let elecSteps=[];
+
+if(tariffType==="residential"){
+/* Solar Residential = exact Residential slab structure */
+let remain=billedUnits;
+let startUnit=0;
+const limits=[100*billingPeriod,200*billingPeriod,200*billingPeriod];
+const slabRates=[rates.slab1Rate,rates.slab2Rate,rates.slab3Rate,rates.slab4Rate];
+
+for(let i=0;i<4&&remain>0;i++){
+const x=i<3?Math.min(remain,limits[i]):remain;
+const amount=x*slabRates[i];
+const endUnit=startUnit+x;
+electricityCharges+=amount;
+
+slabHTML+=`<tr>
+<td>${i===3?"Above "+startUnit.toFixed(2):startUnit.toFixed(2)+" - "+endUnit.toFixed(2)}</td>
+<td>${x.toFixed(2)}</td>
+<td>${formatMoney(slabRates[i])}</td>
+<td>${formatMoney(amount)}</td>
+</tr>`;
+
+elecSteps.push(`• Slab ${i+1} (${i===3?"Above "+startUnit.toFixed(2):startUnit.toFixed(2)+" to "+endUnit.toFixed(2)}): ${x.toFixed(2)} units × ${formatMoney(slabRates[i])} = ${formatMoney(amount)}`);
+
+remain-=x;
+startUnit=endUnit;
+}
+}else{
+/* Solar Commercial = exact existing Commercial tariff path */
+electricityCharges=billedUnits*rates.commercialFlatRate;
+slabHTML=`<tr>
+<td>All Units (Commercial Rate)</td>
+<td>${billedUnits.toFixed(2)}</td>
+<td>${formatMoney(rates.commercialFlatRate)}</td>
+<td>${formatMoney(electricityCharges)}</td>
+</tr>`;
+elecSteps.push(`• Commercial Rate: ${billedUnits.toFixed(2)} units × ${formatMoney(rates.commercialFlatRate)} = ${formatMoney(electricityCharges)}`);
+}
+
+/* ---------- FAC ---------- */
+let fuelCharges=0;
+let fuelSteps=[];
+
+if(tariffType==="residential"){
+/* Solar Residential = exact Residential FAC slab calculation */
+let remainFuel=billedUnits;
+const fuelLimits=[100*billingPeriod,200*billingPeriod,200*billingPeriod];
+const fuelRates=[rates.fuelRate1,rates.fuelRate2,rates.fuelRate3];
+
+for(let i=0;i<3&&remainFuel>0;i++){
+const x=Math.min(remainFuel,fuelLimits[i]);
+const amount=x*fuelRates[i];
+fuelCharges+=amount;
+fuelSteps.push(`• ${i===0?"First":"Next"} ${x.toFixed(2)} units × ₹${fuelRates[i].toFixed(3)} = ${formatMoney(amount)}`);
+remainFuel-=x;
+}
+if(remainFuel>0){
+const amount=remainFuel*rates.fuelRate4;
+fuelCharges+=amount;
+fuelSteps.push(`• Remaining ${remainFuel.toFixed(2)} units × ₹${rates.fuelRate4.toFixed(3)} = ${formatMoney(amount)}`);
+}
+}else{
+/* Solar Commercial = exact existing Commercial FAC */
+const cFacRate=(rates.commercialFacRate!==undefined?rates.commercialFacRate:rates.fuelRate1);
+fuelCharges=billedUnits*cFacRate;
+fuelSteps.push(`• Commercial FAC: ${billedUnits.toFixed(2)} units × ₹${cFacRate.toFixed(3)} = ${formatMoney(fuelCharges)}`);
+}
+
+const wheelingCharges=billedUnits*rates.wheelingRate;
+const salesTaxCharges=tariffType==="commercial"?billedUnits*rates.salesTaxRate:0;
+
+let subtotal=fixedCharges+electricityCharges+wheelingCharges+fuelCharges;
+let finalAddition=0;
+
+if(otherAdjustment<0)subtotal+=otherAdjustment;
+if(otherAdjustment>0)finalAddition=otherAdjustment;
+
+const taxAmount=billedUnits>0?(subtotal*rates.taxPercent/100):0;
+const billWithoutArrears=subtotal+taxAmount+salesTaxCharges+finalAddition;
+const finalBill=billWithoutArrears+arrears;
+
+let promptBase=fixedCharges+electricityCharges+wheelingCharges+fuelCharges;
+if(otherAdjustment<0)promptBase+=otherAdjustment;
+const promptDiscount=promptBase*0.01;
+const digitalDiscount=promptBase*0.0025;
+const baseForDelay=(otherAdjustment>0)?(billWithoutArrears-otherAdjustment):billWithoutArrears;
+const delayCharges=baseForDelay*0.0125;
+
+let steps=`<strong>Step-by-Step Solar Calculation Breakdown {Design by Tejas Kachare}</strong><br><br>`;
+steps+=`<strong>Solar Connection Tariff</strong><br>➔ ${connectionType==="solar_residential"?"Solar Residential → Residential tariff/slabs/rates":"Solar Commercial → Commercial tariff/rates"}<br><br>`;
+
+steps+=`<strong>Solar Meter Reading</strong><br>`;
+steps+=`➔ Import Units = Current Import (${si.importCurrent.toFixed(2)}) - Previous Import (${si.importPrevious.toFixed(2)}) = <b>${importUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ Export Units = Current Export (${si.exportCurrent.toFixed(2)}) - Previous Export (${si.exportPrevious.toFixed(2)}) = <b>${exportUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ Generation Units = Current Generation (${si.generationCurrent.toFixed(2)}) - Previous Generation (${si.generationPrevious.toFixed(2)}) = <b>${generationUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ Previous Banked Units = <b>${previousBanked.toFixed(2)}</b><br>`;
+steps+=`➔ Offset / Export Units Available for Credit = <b>${offsetUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ Meter-based Billed Units Reference = Import (${importUnits.toFixed(2)}) - Offset (${offsetUnits.toFixed(2)}) - Previous Banked (${previousBanked.toFixed(2)}) = <b>${meterCalculatedBilledUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ Current Banked Units = <b>${currentBanked.toFixed(2)} units</b><br><br>`;
+
+steps+=`<strong>Step 1: Solar Total Unit Consumption Used for Tariff</strong><br>`;
+steps+=`➔ Manual Total Unit Consumption = <b>${billedUnits.toFixed(2)} units</b><br>`;
+steps+=`➔ This quantity is charged using the ${tariffType==="residential"?"Residential":"Commercial"} tariff selected above.<br><br>`;
+
+if(tariffType==="residential"){
+steps+=`<strong>Step 2: Residential Slab-wise Electricity Charges</strong><br>`;
+}else{
+steps+=`<strong>Step 2: Commercial Electricity Charges</strong><br>`;
+}
+steps+=elecSteps.join("<br>")+`<br>➔ <b>Total Electricity Charges = ${formatMoney(electricityCharges)}</b><br><br>`;
+
+steps+=`<strong>Step 3: Fixed Charges</strong><br>➔ Fixed Charges = ${formatMoney(fixedCharges)}<br><br>`;
+steps+=`<strong>Step 4: Wheeling Charges</strong><br>➔ ${billedUnits.toFixed(2)} units × ${formatMoney(rates.wheelingRate)} = ${formatMoney(wheelingCharges)}<br><br>`;
+
+steps+=`<strong>Step 5: ${tariffType==="residential"?"Residential":"Commercial"} FAC</strong><br>`;
+steps+=fuelSteps.join("<br>")+`<br>➔ <b>Total FAC = ${formatMoney(fuelCharges)}</b><br><br>`;
+
+steps+=`<strong>Step 6: Subtotal</strong><br>➔ Fixed (${formatMoney(fixedCharges)}) + Electricity (${formatMoney(electricityCharges)}) + Wheeling (${formatMoney(wheelingCharges)}) + FAC (${formatMoney(fuelCharges)})`;
+if(otherAdjustment<0)steps+=` - Adjustment (${formatMoney(Math.abs(otherAdjustment))})`;
+steps+=` = <b>${formatMoney(subtotal)}</b><br><br>`;
+
+steps+=`<strong>Step 7: Electricity Duty (${rates.taxPercent}%)</strong><br>➔ ${formatMoney(subtotal)} × ${rates.taxPercent}% = ${formatMoney(taxAmount)}<br><br>`;
+
+if(tariffType==="commercial"){
+steps+=`<strong>Step 8: Sales Tax</strong><br>➔ ${billedUnits.toFixed(2)} units × ${formatMoney(rates.salesTaxRate)} = ${formatMoney(salesTaxCharges)}<br><br>`;
+}
+
+if(otherAdjustment>0)
+steps+=`<strong>Additional Other Charges</strong><br>➔ Added after calculation = ${formatMoney(otherAdjustment)}<br><br>`;
+
+steps+=`<strong>Current Bill (Without Arrears)</strong><br>➔ ${formatMoney(subtotal)} + Duty (${formatMoney(taxAmount)})`;
+if(tariffType==="commercial")steps+=` + Sales Tax (${formatMoney(salesTaxCharges)})`;
+if(otherAdjustment>0)steps+=` + Other Charge (${formatMoney(otherAdjustment)})`;
+steps+=` = <b>${formatMoney(billWithoutArrears)}</b><br><br>`;
+
+steps+=`<strong>Step 9: Informational Discounts & Surcharges</strong><br>`;
+steps+=`➔ Prompt Payment Discount (1%) = ${formatMoney(promptDiscount)}<br>`;
+steps+=`➔ Digital Payment Discount (0.25%) = ${formatMoney(digitalDiscount)}<br>`;
+steps+=`➔ Delay Payment Charges (1.25%) = ${formatMoney(delayCharges)}<br><br>`;
+
+if(arrears!==0)
+steps+=`<strong>Total Arrears Amount</strong><br>➔ ${arrears<0?"Subtracted (Advance)":"Added (Due)"} = ${formatMoney(arrears)}<br><br>`;
+
+steps+=`<strong>Final Payable Bill (With Arrears)</strong><br>➔ ${formatMoney(billWithoutArrears)} ${arrears<0?"-":"+"} Arrears (${formatMoney(Math.abs(arrears))}) = <b>${formatMoney(finalBill)}</b>`;
+
+return{
+connTypeStr:connectionType==="solar_residential"?"Solar Residential":"Solar Commercial",
+unitsStr:billedUnits.toFixed(2),
+periodStr:billingPeriod.toFixed(2),
+monthsStr:months+" Month(s)",
+daysStr:(billingPeriod*30).toFixed(2)+" days",
+chargesTitleStr:tariffType==="residential"?"Solar Electricity Charges - Residential Slab Wise":"Solar Electricity Charges - Commercial Rate",
+thSlabStr:tariffType==="residential"?"Slab":"Category",
+slabHTMLStr:slabHTML,
+elecCharges:electricityCharges,
+fixedCharges,
+wheelingCharges,
+fuelCharges,
+salesTaxCharges,
+taxPercent:rates.taxPercent,
+otherAdjustment,
+arrears,
+subtotal,
+taxAmount,
+billWithoutArrears,
+promptDiscount,
+digitalDiscount,
+delayCharges,
+finalBill,
+stepsHTMLStr:steps,
+ratesUsed:rates,
+salesTax:tariffType==="commercial",
+otherNegative:otherAdjustment<0,
+otherPositive:otherAdjustment>0,
+hasArrears:arrears!==0,
+solarData:{
+...si,
+importUnits,
+exportUnits,
+generationUnits,
+offsetUnits,
+previousBanked,
+billedUnits,
+meterCalculatedBilledUnits,
+currentBanked,
+tariffType
+}
+};
+}
+/*it5-t3ja5 - 7588717996*/
+/* ---------- NORMAL RESIDENTIAL / COMMERCIAL BILLING ---------- */
 const wheelingCharges=units*rates.wheelingRate;
 
 let fuelCharges=0,fuelSteps=[];
@@ -510,8 +867,8 @@ fuelCharges+=a;
 fuelSteps.push(`• Remaining ${remainFuel.toFixed(2)} units × ₹${rates.fuelRate4.toFixed(3)} = ${formatMoney(a)}`);
 }
 }else{
-let cFacRate = rates.commercialFacRate !== undefined ? rates.commercialFacRate : rates.fuelRate1;
-fuelCharges = units * cFacRate;
+let cFacRate=rates.commercialFacRate!==undefined?rates.commercialFacRate:rates.fuelRate1;
+fuelCharges=units*cFacRate;
 fuelSteps.push(`• Total Units ${units.toFixed(2)} units × ₹${cFacRate.toFixed(3)} = ${formatMoney(fuelCharges)}`);
 }
 
@@ -526,11 +883,8 @@ for(let i=0;i<4&&remain>0;i++){
 let x=i<3?Math.min(remain,limits[i]):remain;
 let a=x*slabRates[i],end=start+x;
 electricityCharges+=a;
-
 slabHTML+=`<tr><td>${i===3?"Above "+start.toFixed(2):start.toFixed(2)+" - "+end.toFixed(2)}</td><td>${x.toFixed(2)}</td><td>${formatMoney(slabRates[i])}</td><td>${formatMoney(a)}</td></tr>`;
-
 elecSteps.push(`• Slab ${i+1} (${i===3?"Above "+start.toFixed(2):start.toFixed(2)+" to "+end.toFixed(2)}): ${x.toFixed(2)} units × ${formatMoney(slabRates[i])} = ${formatMoney(a)}`);
-
 remain-=x;start=end;
 }
 }else{
@@ -543,78 +897,75 @@ elecSteps.push(`• Commercial Flat Rate: ${units.toFixed(2)} units × ${formatM
 let subtotalBase=fixedCharges+electricityCharges+wheelingCharges+fuelCharges;
 let subtotal=subtotalBase;
 let finalAddition=0;
-
 if(otherAdjustment<0)subtotal+=otherAdjustment;
 if(otherAdjustment>0)finalAddition=otherAdjustment;
 
 const taxAmount=units>0?(subtotal*rates.taxPercent/100):0;
 let billWithoutArrears=subtotal+taxAmount+salesTaxCharges+finalAddition;
-
 let finalBill=billWithoutArrears+arrears;
 
-let promptBase = fixedCharges + electricityCharges + wheelingCharges + fuelCharges;
-if(otherAdjustment < 0) promptBase += otherAdjustment;
-let promptDiscount = promptBase * 0.01;
+let promptBase=fixedCharges+electricityCharges+wheelingCharges+fuelCharges;
+if(otherAdjustment<0)promptBase+=otherAdjustment;
+let promptDiscount=promptBase*0.01;
+let digitalDiscount=promptBase*0.0025;
+let baseForDelay=(otherAdjustment>0)?(billWithoutArrears-otherAdjustment):billWithoutArrears;
+let delayCharges=baseForDelay*0.0125;
 
-let digitalDiscount = promptBase * 0.0025;
-
-let baseForDelay = (otherAdjustment > 0) ? (billWithoutArrears - otherAdjustment) : billWithoutArrears;
-let delayCharges = baseForDelay * 0.0125;
-
-let steps=`<strong>Step 1: Electricity Charges Calculation</strong><br>`;
-steps+=elecSteps.join("<br>")+"<br>➔ <b>Total Electricity Charges = "+formatMoney(electricityCharges)+"</b><br><br>";
-
+let steps=`<strong>Step-by-Step Calculation Breakdown {Design by Tejas Kachare}</strong><br><br>`;
+steps+=`<strong>Step 1: Electricity Charges Calculation</strong><br>`;
+steps+=elecSteps.join("<br>")+`<br>➔ <b>Total Electricity Charges = ${formatMoney(electricityCharges)}</b><br><br>`;
 steps+=`<strong>Step 2: Fixed Charges</strong><br>➔ Fixed Charges = ${formatMoney(fixedCharges)}<br><br>`;
 steps+=`<strong>Step 3: Wheeling Charges Calculation</strong><br>➔ ${units.toFixed(2)} units × ${formatMoney(rates.wheelingRate)} = ${formatMoney(wheelingCharges)}<br><br>`;
-
 steps+=`<strong>Step 4: Fuel Adjustment Charges (FAC)</strong><br>${fuelSteps.join("<br>")}<br>➔ <b>Total FAC = ${formatMoney(fuelCharges)}</b><br><br>`;
-
 steps+=`<strong>Step 5: Subtotal Calculation</strong><br>➔ Fixed (${formatMoney(fixedCharges)}) + Electricity (${formatMoney(electricityCharges)}) + Wheeling (${formatMoney(wheelingCharges)}) + FAC (${formatMoney(fuelCharges)})`;
-
 if(otherAdjustment<0)steps+=` - Adjustment (${formatMoney(Math.abs(otherAdjustment))})`;
 steps+=` = <b>${formatMoney(subtotal)}</b><br><br>`;
-
 steps+=`<strong>Step 6: Electricity Duty (${units>0?rates.taxPercent:0}%)</strong><br>`;
-if(units>0){
-steps+=`➔ ${formatMoney(subtotal)} × ${rates.taxPercent}% = ${formatMoney(taxAmount)}<br><br>`;
-}else{
-steps+=`➔ Units consumed is 0, so Electricity Duty is 0 = ${formatMoney(taxAmount)}<br><br>`;
-}
-
-if(connectionType==="commercial")
-steps+=`<strong>Step 7: Sales Tax</strong><br>➔ ${units.toFixed(2)} units × ${formatMoney(rates.salesTaxRate)} = ${formatMoney(salesTaxCharges)}<br><br>`;
-
-if(otherAdjustment>0)
-steps+=`<strong>Additional Other Charges</strong><br>➔ Added after calculation = ${formatMoney(otherAdjustment)}<br><br>`;
-
+if(units>0)steps+=`➔ ${formatMoney(subtotal)} × ${rates.taxPercent}% = ${formatMoney(taxAmount)}<br><br>`;
+else steps+=`➔ Units consumed is 0, so Electricity Duty is 0 = ${formatMoney(taxAmount)}<br><br>`;
+if(connectionType==="commercial")steps+=`<strong>Step 7: Sales Tax</strong><br>➔ ${units.toFixed(2)} units × ${formatMoney(rates.salesTaxRate)} = ${formatMoney(salesTaxCharges)}<br><br>`;
+if(otherAdjustment>0)steps+=`<strong>Additional Other Charges</strong><br>➔ Added after calculation = ${formatMoney(otherAdjustment)}<br><br>`;
 steps+=`<strong>Current Bill (Without Arrears):</strong> ${formatMoney(subtotal)} + Duty (${formatMoney(taxAmount)})`;
 if(connectionType==="commercial")steps+=` + Sales Tax (${formatMoney(salesTaxCharges)})`;
 if(otherAdjustment>0)steps+=` + Additional Charge (${formatMoney(otherAdjustment)})`;
 steps+=` = <b>${formatMoney(billWithoutArrears)}</b><br><br>`;
-
 steps+=`<strong>Step 8: Informational Discounts & Surcharges Breakdown</strong><br>`;
 steps+=`➔ Prompt Payment Discount (1% of Fixed + Elec + Wheeling + FAC): ${formatMoney(promptBase)} × 1% = ${formatMoney(promptDiscount)}<br>`;
 steps+=`➔ Digital Payment Discount (0.25% of Fixed + Elec + Wheeling + FAC): ${formatMoney(promptBase)} × 0.25% = ${formatMoney(digitalDiscount)}<br>`;
 steps+=`➔ Delay Payment Charges Base (${otherAdjustment > 0 ? "Current Bill minus positive Other Charges" : "Current Bill without negative adjustment deduction"}): ${formatMoney(baseForDelay)}<br>`;
 steps+=`➔ Delay Payment Charges (1.25% of base): ${formatMoney(baseForDelay)} × 1.25% = <b>${formatMoney(delayCharges)}</b><br><br>`;
-
-if(arrears !== 0)
-steps+=`<strong>Total Arrears Amount</strong><br>➔ ${arrears < 0 ? "Subtracted (Advance)" : "Added (Due)"} = ${formatMoney(arrears)}<br><br>`;
-
-steps+=`<strong>Final Payable Bill (With Arrears):</strong> ${formatMoney(billWithoutArrears)} ${arrears < 0 ? "-" : "+"} Arrears (${formatMoney(Math.abs(arrears))}) = <b>${formatMoney(finalBill)}</b>`;
+if(arrears!==0)steps+=`<strong>Total Arrears Amount</strong><br>➔ ${arrears<0?"Subtracted (Advance)":"Added (Due)"} = ${formatMoney(arrears)}<br><br>`;
+steps+=`<strong>Final Payable Bill (With Arrears):</strong> ${formatMoney(billWithoutArrears)} ${arrears<0?"-":"+"} Arrears (${formatMoney(Math.abs(arrears))}) = <b>${formatMoney(finalBill)}</b>`;
 
 return{
 connTypeStr:connectionType==="residential"?"Residential":"Commercial",
-unitsStr:units.toFixed(2),periodStr:billingPeriod.toFixed(2),
-monthsStr:months+" Month(s)",daysStr:(billingPeriod*30).toFixed(2)+" days",
+unitsStr:units.toFixed(2),
+periodStr:billingPeriod.toFixed(2),
+monthsStr:months+" Month(s)",
+daysStr:(billingPeriod*30).toFixed(2)+" days",
 chargesTitleStr:connectionType==="residential"?"Electricity Charges - Slab Wise":"Electricity Charges - Commercial Rate",
 thSlabStr:connectionType==="residential"?"Slab":"Category",
-slabHTMLStr:slabHTML,elecCharges:electricityCharges,fixedCharges,
-wheelingCharges,fuelCharges,salesTaxCharges,taxPercent:rates.taxPercent,
-otherAdjustment,arrears,subtotal,taxAmount,billWithoutArrears,
-promptDiscount,digitalDiscount,delayCharges,
-finalBill,stepsHTMLStr:steps,ratesUsed:rates,
-salesTax:connectionType==="commercial",otherNegative:otherAdjustment<0,otherPositive:otherAdjustment>0,
+slabHTMLStr:slabHTML,
+elecCharges:electricityCharges,
+fixedCharges,
+wheelingCharges,
+fuelCharges,
+salesTaxCharges,
+taxPercent:rates.taxPercent,
+otherAdjustment,
+arrears,
+subtotal,
+taxAmount,
+billWithoutArrears,
+promptDiscount,
+digitalDiscount,
+delayCharges,
+finalBill,
+stepsHTMLStr:steps,
+ratesUsed:rates,
+salesTax:connectionType==="commercial",
+otherNegative:otherAdjustment<0,
+otherPositive:otherAdjustment>0,
 hasArrears:arrears!==0
 };
 }
@@ -631,6 +982,10 @@ document.getElementById("displayUnits").innerText=d.unitsStr;
 document.getElementById("displayPeriod").innerText=d.periodStr;
 document.getElementById("displayMonths").innerText=d.monthsStr;
 document.getElementById("displayDays").innerText=d.daysStr;
+document.getElementById("solarDisplayRow").style.display=d.solarData?"table-row":"none";
+if(d.solarData){
+document.getElementById("solarDisplaySummary").innerText=`Import ${d.solarData.importUnits.toFixed(2)} | Export ${d.solarData.exportUnits.toFixed(2)} | Generation ${d.solarData.generationUnits.toFixed(2)} | Manual Total Units ${d.solarData.billedUnits.toFixed(2)}`;
+}
 document.getElementById("chargesTitle").innerText=d.chargesTitleStr;
 document.getElementById("thSlab").innerText=d.thSlabStr;
 document.getElementById("slabDetails").innerHTML=d.slabHTMLStr;
@@ -666,7 +1021,7 @@ document.getElementById("finalBillSublabel").innerText=d.hasArrears?
 `(Includes arrears amount of ${formatMoney(d.arrears)})`:
 `(No arrears added)`;
 
-document.getElementById("formulaBox").innerHTML="<strong>Step-by-Step Calculation Breakdown</strong><br><br>"+d.stepsHTMLStr;
+document.getElementById("formulaBox").innerHTML=d.stepsHTMLStr;
 setupRateInputs(d);
 }
 
@@ -674,7 +1029,41 @@ function setupRateInputs(d){
 const r=d.ratesUsed;
 let html="";
 
-if(d.connTypeStr==="Residential"){
+if(d.connTypeStr==="Solar Residential"){
+html+=`
+<div class="input-group">
+<label>Residential Slab 1 Rate (₹/unit)</label>
+<input type="number" id="editSlab1" step="0.01" value="${r.slab1Rate}">
+</div>
+<div class="input-group">
+<label>Residential Slab 2 Rate (₹/unit)</label>
+<input type="number" id="editSlab2" step="0.01" value="${r.slab2Rate}">
+</div>
+<div class="input-group">
+<label>Residential Slab 3 Rate (₹/unit)</label>
+<input type="number" id="editSlab3" step="0.01" value="${r.slab3Rate}">
+</div>
+<div class="input-group">
+<label>Residential Slab 4 Rate (₹/unit)</label>
+<input type="number" id="editSlab4" step="0.01" value="${r.slab4Rate}">
+</div>
+<div class="input-group">
+<label>Residential FAC Tier 1 Rate (₹/unit)</label>
+<input type="number" id="editFac1" step="0.001" value="${r.fuelRate1}">
+</div>
+<div class="input-group">
+<label>Residential FAC Tier 2 Rate (₹/unit)</label>
+<input type="number" id="editFac2" step="0.001" value="${r.fuelRate2}">
+</div>
+<div class="input-group">
+<label>Residential FAC Tier 3 Rate (₹/unit)</label>
+<input type="number" id="editFac3" step="0.001" value="${r.fuelRate3}">
+</div>
+<div class="input-group">
+<label>Residential FAC Tier 4 Rate (₹/unit)</label>
+<input type="number" id="editFac4" step="0.001" value="${r.fuelRate4}">
+</div>`;
+}else if(d.connTypeStr==="Residential"){
 html+=`
 <div class="input-group">
 <label>Slab 1 Rate (₹/unit)</label>
@@ -708,10 +1097,10 @@ html+=`
 <label>FAC Tier 4 Rate (₹/unit)</label>
 <input type="number" id="editFac4" step="0.001" value="${r.fuelRate4}">
 </div>`;
-}else{
+}else if(d.connTypeStr==="Solar Commercial"||d.connTypeStr==="Commercial"){
 html+=`
 <div class="input-group">
-<label>Commercial Flat Rate (₹/unit)</label>
+<label>Commercial Rate (₹/unit)</label>
 <input type="number" id="editCommercialFlat" step="0.01" value="${r.commercialFlatRate}">
 </div>
 <div class="input-group">
@@ -720,7 +1109,7 @@ html+=`
 </div>
 <div class="input-group">
 <label>Commercial FAC Rate (₹/unit)</label>
-<input type="number" id="editCommercialFac" step="0.001" value="${r.commercialFacRate !== undefined ? r.commercialFacRate : 0.400}">
+<input type="number" id="editCommercialFac" step="0.001" value="${r.commercialFacRate}">
 </div>`;
 }
 
@@ -754,8 +1143,8 @@ if(p.style.display==="block")p.scrollIntoView({behavior:"smooth"});
 function recalculateWithCustomRates(){
 let r={...(globalCurrentInputs.customRates||{})};
 const type=globalCurrentInputs.connectionType;
-
-if(type==="residential"){
+/*it5-t3ja5 - 7588717996*/
+if(type==="solar_residential"||type==="residential"){
 r.slab1Rate=parseFloat(document.getElementById("editSlab1").value)||3.96;
 r.slab2Rate=parseFloat(document.getElementById("editSlab2").value)||10.80;
 r.slab3Rate=parseFloat(document.getElementById("editSlab3").value)||15.03;
@@ -771,17 +1160,26 @@ r.commercialFacRate=parseFloat(document.getElementById("editCommercialFac").valu
 }
 
 r.wheelingRate=parseFloat(document.getElementById("editWheeling").value)||1.60;
-r.taxPercent=parseFloat(document.getElementById("editDutyPercent").value)||(type==="residential"?16:21);
+const duty=parseFloat(document.getElementById("editDutyPercent").value);
+r.taxPercent=Number.isFinite(duty)?duty:(type==="commercial"||type==="solar_commercial"?21:16);
 
 const oa=parseFloat(document.getElementById("editOtherAdjRate").value);
-globalCurrentInputs.otherAdjustment=isNaN(oa)?0:oa;
+globalCurrentInputs.otherAdjustment=Number.isFinite(oa)?oa:0;
 
 const ar=parseFloat(document.getElementById("editArrearsRate").value);
-globalCurrentInputs.arrears=isNaN(ar)?0:ar;
+globalCurrentInputs.arrears=Number.isFinite(ar)?ar:0;
 
 globalCurrentInputs.customRates=r;
 
+const recalculatedData=calculateBillData(globalCurrentInputs,r);
+setupRateInputs(recalculatedData);
 runCalculationAndDisplay(globalCurrentInputs,true);
+}
+
+function reopenRateEditor(){
+const p=document.getElementById("editRatesPanel");
+p.style.display="block";
+p.scrollIntoView({behavior:"smooth"});
 }
 
 function appendComparisonCard(d){
@@ -794,6 +1192,15 @@ c.innerHTML+=`<hr class="section-divider">
 <tr><td>Connection Type</td><td>${d.connTypeStr}</td></tr>
 <tr><td>Units Consumed</td><td>${d.unitsStr}</td></tr>
 <tr><td>Billing Period</td><td>${d.periodStr}</td></tr>
+${d.solarData?`
+<tr><td>Solar Import Units</td><td>${d.solarData.importUnits.toFixed(2)}</td></tr>
+<tr><td>Solar Export Units</td><td>${d.solarData.exportUnits.toFixed(2)}</td></tr>
+<tr><td>Solar Generation Units</td><td>${d.solarData.generationUnits.toFixed(2)}</td></tr>
+<tr><td>Previous Banked Units</td><td>${d.solarData.previousBanked.toFixed(2)}</td></tr>
+<tr><td>Offset / Credit Units</td><td>${d.solarData.offsetUnits.toFixed(2)}</td></tr>
+<tr><td>Meter-based Billed Units (Reference)</td><td>${d.solarData.meterCalculatedBilledUnits.toFixed(2)}</td></tr>
+<tr><td>Manual Total Unit Consumption</td><td>${d.solarData.billedUnits.toFixed(2)}</td></tr>
+<tr><td>Current Banked Units</td><td>${d.solarData.currentBanked.toFixed(2)}</td></tr>`:""}
 </table>
 
 <h3>${d.chargesTitleStr}</h3>
@@ -829,14 +1236,14 @@ ${d.hasArrears?`<tr style="background:#fff3cd;font-weight:bold"><td>Total Arrear
 </div>
 
 <div class="final-bill comparison-bill" style="background:linear-gradient(135deg,#1b5e20,#2e7d32);">
-<div>TOTAL PAYABLE BILL (WITH ARREars)</div>
+<div>TOTAL PAYABLE BILL (WITH ARREARS)</div>
 <div class="amount">${formatMoney(d.finalBill)}</div>
 </div>
 
 <div class="formula-box">
-<strong>Step-by-Step Calculation Breakdown</strong><br><br>
 ${d.stepsHTMLStr}
 </div>
+<button class="secondary-btn" onclick="reopenRateEditor()">Edit Rates Again</button>
 </div>`;
 
 const cards=c.querySelectorAll(".card");
