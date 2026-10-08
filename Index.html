@@ -744,7 +744,7 @@ const digitalDiscount=promptBase*0.0025;
 const baseForDelay=(otherAdjustment>0)?(billWithoutArrears-otherAdjustment):billWithoutArrears;
 const delayCharges=baseForDelay*0.0125;
 
-let steps=`<strong>Step-by-Step Solar Calculation Breakdown {Design by Tejas Kachare}</strong><br><br>`;
+let steps=`<strong>Step-by-Step Solar Calculation Breakdown by Tejas Kachare</strong><br><br>;
 steps+=`<strong>Solar Connection Tariff</strong><br>➔ ${connectionType==="solar_residential"?"Solar Residential → Residential tariff/slabs/rates":"Solar Commercial → Commercial tariff/rates"}<br><br>`;
 
 steps+=`<strong>Solar Meter Reading</strong><br>`;
@@ -911,7 +911,7 @@ let digitalDiscount=promptBase*0.0025;
 let baseForDelay=(otherAdjustment>0)?(billWithoutArrears-otherAdjustment):billWithoutArrears;
 let delayCharges=baseForDelay*0.0125;
 
-let steps=`<strong>Step-by-Step Calculation Breakdown {Design by Tejas Kachare}</strong><br><br>`;
+let steps=`<strong>Step-by-Step Calculation Breakdown by Tejas Kachare</strong><br><br>`;
 steps+=`<strong>Step 1: Electricity Charges Calculation</strong><br>`;
 steps+=elecSteps.join("<br>")+`<br>➔ <b>Total Electricity Charges = ${formatMoney(electricityCharges)}</b><br><br>`;
 steps+=`<strong>Step 2: Fixed Charges</strong><br>➔ Fixed Charges = ${formatMoney(fixedCharges)}<br><br>`;
